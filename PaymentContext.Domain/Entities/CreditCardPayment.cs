@@ -13,7 +13,7 @@ namespace PaymentContext.Domain.Entities
                                  decimal total,
                                  decimal totalPaid, 
                                  string payer, 
-                                 string adress, 
+                                 Address address, 
                                  Document document, 
                                  Email email
                             ) :base (
@@ -22,7 +22,7 @@ namespace PaymentContext.Domain.Entities
                                 total, 
                                 totalPaid, 
                                 payer, 
-                                adress, 
+                                address, 
                                 document, 
                                 email
                             )
