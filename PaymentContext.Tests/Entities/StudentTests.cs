@@ -10,7 +10,7 @@ namespace PaymentContext.Tests.Entities
         public void AdicionarAssinatura()
         {
             var subscription = new Subscription(null);
-            var student = new Student ("Camila", "Nunes", "375.195.788-01", "cvn.camila@gmail.com");
+            var student = new Student ("Camila", "375.195.788-01", "cvn.camila@gmail.com");
             student.AddSubscription(subscription);
         }
     }
