@@ -28,7 +28,9 @@ namespace PaymentContext.Domain.Entities
 
         public void AddSubscription(Subscription subscription)
         {
+
             var hasSubscriptionActive = false;
+
             foreach(var sub in _subscriptions)    
             {
                 if(sub.Active)
@@ -38,6 +40,7 @@ namespace PaymentContext.Domain.Entities
             AddNotifications(new Contract()
                 .Requires()
                 .IsFalse(hasSubscriptionActive, "Student.Subscription", "E-mail ou CPF já cadastrado.")
+                .IsGreaterThan(0, subscription.Payments.Count, "Student.Subscription.Payments", "Essa assinatura não possui pagamento.")
             );
 
             //Alternativa para não trabalhar com o contrato:
